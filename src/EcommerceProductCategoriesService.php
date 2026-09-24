@@ -37,6 +37,11 @@ class EcommerceProductCategoriesService extends SharpApiClient
                 'sharpapi-ecommerce-product-categories.api_job_status_polling_wait',
                 180)
         );
+        $this->setUseCustomInterval(
+            (bool) config(
+                'sharpapi-ecommerce-product-categories.api_job_status_use_polling_interval',
+                false)
+        );
         $this->setUserAgent('SharpAPILaravelEcommerceProductCategories/1.0.0');
     }
 
